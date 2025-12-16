@@ -5,8 +5,8 @@ An interactive web application that modernizes the traditional Bengali Eid Salam
 
 ## 🎯 Key Features
 
-### 1. **AI-Powered Message Generator**
-- Generates personalized Eid blessings using an AI algorithm
+### 1. **Message Generator**
+- Generates personalized Eid blessings using
 - 8 unique pre-trained message variations
 - Random selection mechanism for diverse outputs
 - Real-time message generation with visual feedback
@@ -33,30 +33,29 @@ An interactive web application that modernizes the traditional Bengali Eid Salam
 ```
 eid-salami-project/
 │
-├── index.html          # Main HTML file with embedded CSS & JS
+├── index.html          # Main HTML file    
+├── script.js
+├── styles.css       
 ├── README.md           # This file
-└── screenshots/        # Screenshots for documentation
-    ├── homepage.png
-    ├── ai-message.png
-    └── interaction.png
+
 ```
 
 ## 🚀 How to Use
 
 ### For Users:
 1. Open the website
-2. Read the AI-generated Eid blessing
+2. Read the Eid blessing
 3. Click "Generate Message" for new blessings
 4. Click "Yes, I will" to reveal payment details
 5. Copy the Bkash number and send Salami
 
-### For Developers:
+<!-- ### For Developers:
 1. Download the `index.html` file
 2. Open it in any modern web browser
 3. No server or dependencies required
-4. Edit the HTML file to customize
+4. Edit the HTML file to customize -->
 
-## 🎨 AI Implementation
+<!-- ## 🎨 AI Implementation
 
 The AI message generator works through:
 ```javascript
@@ -68,7 +67,7 @@ function generateMessage() {
   const randomMsg = messages[Math.floor(Math.random() * messages.length)];
   // Display with typing effect simulation
 }
-```
+``` -->
 
 ## 🌟 What Makes This Creative & Unique?
 
@@ -77,18 +76,6 @@ function generateMessage() {
 3. **Behavioral Psychology**: Uses psychological design to encourage positive actions
 4. **Technical Execution**: Combines multiple web technologies seamlessly
 5. **Real-World Application**: Solves an actual need (digital Salami collection)
-
-## 📊 Assignment Submission Details
-
-**What I Created:**
-An AI-powered interactive website that generates personalized Eid messages and gamifies the traditional Salami collection process using advanced web technologies and machine learning principles.
-
-**Why It's Creative & Unique:**
-- Uses AI algorithms to generate dynamic, personalized content
-- Combines cultural tradition with cutting-edge technology
-- Implements behavioral psychology in UX design
-- Fully functional, not just a concept or template
-- Serves real-world purpose while entertaining users
 
 ## 🔗 Live Demo
 - **Live Site**: https://auniker-salami.netlify.app/
@@ -103,5 +90,3 @@ Created by @mehedyk for educational purposes.
 - Background image from community sources
 
 ---
-
-**Note**: This project demonstrates the practical application of AI in everyday cultural practices, making technology accessible and meaningful for all users.
