@@ -1,4 +1,4 @@
-# 🌙 AI-Enhanced Eid Salami Collection Website
+# Eid Salami Collection Website
 
 ## Project Overview
 An interactive web application that modernizes the traditional Bengali Eid Salami (gift-giving) practice using AI technology and creative web design.
