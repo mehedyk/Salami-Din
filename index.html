@@ -38,7 +38,10 @@
 
   <script src="script.js"></script>
   <footer>
-    A <a href="https://github.com/mehedyk" target="_blank">@mehedyk</a> product
+    <p style="align-items:center">A <a href="https://github.com/mehedyk" target="_blank" rel="noopener noreferrer">mehedyk</a> product. All rights reserved. &copy; <span id="currentYear"></span>.</p>
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
   </footer>
 </body>
 </html>
