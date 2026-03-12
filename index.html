@@ -2,46 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>অনীকের সালামী</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Aunik er Salami</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="container">
-    <h1>Assalamu Alaikum! Eid Mubarak! 🌙✨</h1>
-    <h2>তাকাব্বালাল্লাহু মিন্না ওয়া মিনকুম</h2>
-    
-    <p>Wanna give Salami to your well-wisher, Aunik or Mahdi? (We're the same guy.)</p>
-    
-    <div class="buttons">
-      <button id="yesBtn" class="btn btn-yes">Yes, I will</button>
-      <button id="noBtn" class="btn btn-no">No, I won't</button>
-    </div>
-    
-    <p class="warning">Na korben na... Pore somossa hobe!</p>
-    
-    <div id="selamiInfo" class="hidden">
-      <p><strong>Bkash Number:</strong> 01790467463</p>
-      <button class="copy-btn" onclick="copyNumber()">Copy Number</button>
-    </div>
-  
-    <img id="customImage" class="hidden custom-img" src="https://i.postimg.cc/jdRcYGPw/0001.jpg" alt="Custom Image">
+<body class="midnight">
 
-        <!-- AI Message Generator -->
-    <div class="ai-section">
-      <h3>Eid Blessing:</h3>
-      <p id="aiMessage">Click below to get a personalized Eid message!</p>
-      <button class="generate-btn" onclick="generateMessage()">Generate Message</button>
-      <!-- <div class="counter" id="counter"></div> -->
+<canvas id="bg"></canvas>
+
+<!-- TOPBAR -->
+<nav class="bar">
+  <div class="dpicker">
+    <button class="pill" id="tpBtn" onclick="toggleDD()">
+      <span id="tpLbl">🌙 Midnight</span>
+      <span class="arr">▾</span>
+    </button>
+    <div class="ddrop" id="dd">
+      <div class="dopt on" onclick="setTheme('midnight','🌙 Midnight',this)">🌙 Midnight</div>
+      <div class="dopt"    onclick="setTheme('ivory','🌿 Ivory',this)">🌿 Ivory</div>
+      <div class="dopt"    onclick="setTheme('dusk','🏜️ Dusk',this)">🏜️ Dusk</div>
+      <div class="dopt"    onclick="setTheme('village','🦟 Grame Mosha Kom',this)">🦟 Grame Mosha Kom</div>
     </div>
   </div>
+  <div class="bar-right">
+    <button class="pill" id="nsBtn" onclick="toggleN()">🔇 Nasheed</button>
+    <button class="pill" id="lgBtn" onclick="toggleL()">🌐 EN</button>
+  </div>
+</nav>
 
-  <script src="script.js"></script>
-  <footer>
-    <p style="align-items:center">A <a href="https://github.com/mehedyk" target="_blank" rel="noopener noreferrer">mehedyk</a> product. All rights reserved. &copy; <span id="currentYear"></span>.</p>
-    <script>
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-  </footer>
+<!-- AUDIO -->
+<audio id="a-midnight" loop preload="none" src=""></audio>
+<audio id="a-ivory"    loop preload="none" src=""></audio>
+<audio id="a-dusk"     loop preload="none" src=""></audio>
+<audio id="a-village"  loop preload="none" src=""></audio>
+
+<!-- CARD -->
+<main class="card">
+  <svg class="svg-ornament" viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="geo-stroke" stroke-width="1" stroke-opacity="0.7" d="M10 30 L40 10 L70 30 L40 50 Z M25 30 L40 18 L55 30 L40 42 Z"/>
+    <circle class="geo-fill" fill-opacity="0.7" cx="40" cy="30" r="3"/>
+    <path class="geo-stroke" stroke-width="1.2" stroke-opacity="0.9" d="M130 8 L137 22 L152 22 L141 31 L145 46 L130 37 L115 46 L119 31 L108 22 L123 22 Z"/>
+    <circle class="geo-fill" fill-opacity="0.6" cx="130" cy="30" r="2.5"/>
+    <path class="geo-stroke" stroke-width="1" stroke-opacity="0.7" d="M250 30 L220 10 L190 30 L220 50 Z M235 30 L220 18 L205 30 L220 42 Z"/>
+    <circle class="geo-fill" fill-opacity="0.7" cx="220" cy="30" r="3"/>
+    <line class="geo-stroke" stroke-width="0.6" stroke-opacity="0.3" x1="60" y1="30" x2="105" y2="30"/>
+    <line class="geo-stroke" stroke-width="0.6" stroke-opacity="0.3" x1="155" y1="30" x2="188" y2="30"/>
+  </svg>
+
+  <p class="eid-label" id="lbl">Eid ul Fitr</p>
+  <h1 class="eid-title" id="ttl">Eid Mubarak</h1>
+  <p class="eid-dua" id="dua">তাকাব্বালাল্লাহু মিন্না ওয়া মিনকুম</p>
+
+  <div class="sep"><span class="sep-icon">◆</span></div>
+
+  <p class="ask" id="ask">Bhai / Apa, apni ki amake — <em>Mehedy (Aunik)</em> ke — ektu salami diben? 🥺</p>
+  <p class="ask-sub" id="asub">Amar well-wisher ra-i shudhu diben... apni ki shei lucky list-e? 👀</p>
+
+  <div class="btn-row">
+    <button class="btn yes" id="yesBtn" onclick="onYes()">✓&nbsp;Dibo, inshallah</button>
+    <button class="btn" id="noBtn" ontouchstart="flee(event)" onmouseover="flee(event)" onclick="flee(event)">✕&nbsp;Na, dibo na</button>
+  </div>
+  <p class="nudge" id="nudge">Na korben na... pore somossa hobe 😬</p>
+
+  <!-- bKash -->
+  <div id="info">
+    <p class="info-tag" id="infoTag">bKash</p>
+    <p class="bkash-no">01790-467463</p>
+    <button class="copy-btn" id="cpBtn" onclick="doCopy()">Copy Number</button>
+    <p class="dua-text" id="duaTxt">JazakAllahu Khairan 🤲 — may this Eid bring you immeasurable joy. Ameen.</p>
+  </div>
+
+  <div class="sep" id="sep2"><span class="sep-icon">◆</span></div>
+
+  <!-- Eid Card -->
+  <div id="cardWrap">
+    <p class="card-lbl" id="clbl">Eid Card</p>
+    <canvas id="ec" width="520" height="300"></canvas><br>
+    <button class="dl-btn" id="dlBtn" onclick="dlCard()">↓ Download</button>
+  </div>
+  <div id="genWrap">
+    <button class="gen-btn" id="genBtn" onclick="makeCard()">Generate Eid Card</button>
+  </div>
+</main>
+
+<footer>
+  <span class="plain">A </span><a class="author" href="https://github.com/mehedyk" target="_blank" rel="noopener">mehedyk</a><span class="plain"> production &nbsp;·&nbsp; <span id="yr"></span></span>
+</footer>
+<script src="script.js">
+</script>
 </body>
 </html>
