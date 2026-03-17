@@ -6,7 +6,7 @@ let lang = 'bn';
 const TX = {
   bn: {
     lbl:'Eid ul Fitr', ttl:'Eid Mubarak', dua:'তাকাব্বালাল্লাহু মিন্না ওয়া মিনকুম',
-    ask:'Bhai / Apa, apni ki amake — <em>Mehedi (Aunik)</em> ke — ektu salami diben? 🥺',
+    ask:'Bhai/Sir, Assalamu Alaikum — <em>Mehedy (Aunik)</em>ke (Amake)—salami diben? 🥺',
     asub:'Amar well-wisher ra-i shudhu diben... apni ki shei lucky list-e? 👀',
     nudge:'Na korben na... pore somossa hobe 😬',
     yes:'✓&nbsp;Dibo, inshallah', no:'✕&nbsp;Na, dibo na',
@@ -16,14 +16,14 @@ const TX = {
     lgBtn:'EN', nOff:'🔇 Nasheed', nOn:'♪ Nasheed',
     noMsgs:[
       'Bhai seriously?? 😭',
-      'Ei Eid-e?! Really? 💔',
-      'Thik ache, porer baar 😔',
-      'Aro dure ja bhai! 😅',
+      'এই ঈদে-ও না?! Really? 💔',
+      'ঠিক নাই, দিয়ে দেন😔',
+      'দূরে না গিয়ে দিয়ে দেন😅',
       'Ektu consider koro! 🥺',
-      'Amio manush, feel kori 😢',
-      'Ufff... thak 😤',
+      'Amio manush,amaro feeling ache 😢',
+      'Dhur mia, thak 😤',
       'Last chance ekhono ache 👀',
-      'Fine, tumi jeto na 😭',
+      'Fine, ja iccha koren 😭',
       'Ja ja, Allah hafez 💔'
     ]
   },

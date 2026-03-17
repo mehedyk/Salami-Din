@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Aunik er Salami</title>
+  <title>অনীক-কে সালামী দেন</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet">
@@ -21,9 +21,9 @@
       <span class="arr">▾</span>
     </button>
     <div class="ddrop" id="dd">
-      <div class="dopt on" onclick="setTheme('midnight','🌙 Midnight',this)">🌙 Midnight</div>
-      <div class="dopt"    onclick="setTheme('ivory','🌿 Ivory',this)">🌿 Ivory</div>
-      <div class="dopt"    onclick="setTheme('dusk','🏜️ Dusk',this)">🏜️ Dusk</div>
+      <div class="dopt on" onclick="setTheme('midnight','🌙 Midnight',this)">মাঝ-রাত</div>
+      <div class="dopt"    onclick="setTheme('ivory','🌿 Ivory',this)">🌿 সকাল</div>
+      <div class="dopt"    onclick="setTheme('dusk','🏜️ Dusk',this)">সন্ধ্যা</div>
       <div class="dopt"    onclick="setTheme('village','🦟 Grame Mosha Kom',this)">🦟 Grame Mosha Kom</div>
     </div>
   </div>
@@ -34,10 +34,10 @@
 </nav>
 
 <!-- AUDIO -->
-<audio id="a-midnight" loop preload="none" src=""></audio>
-<audio id="a-ivory"    loop preload="none" src=""></audio>
-<audio id="a-dusk"     loop preload="none" src=""></audio>
-<audio id="a-village"  loop preload="none" src=""></audio>
+<audio id="a-midnight" loop preload="none" src="audio/01.mp3"></audio>
+<audio id="a-ivory"    loop preload="none" src="audio/02.mp3"></audio>
+<audio id="a-dusk"     loop preload="none" src="audio/03.mp3"></audio>
+<audio id="a-village"  loop preload="none" src="audio/04.mp3"></audio>
 
 <!-- CARD -->
 <main class="card">
@@ -58,12 +58,12 @@
 
   <div class="sep"><span class="sep-icon">◆</span></div>
 
-  <p class="ask" id="ask">Bhai / Apa, apni ki amake — <em>Mehedy (Aunik)</em> ke — ektu salami diben? 🥺</p>
+  <p class="ask" id="ask">Bhai/Sir, Assalamu Alaikum — <em>Mehedy (Aunik)</em>ke (Amake)—salami diben? 🥺</p>
   <p class="ask-sub" id="asub">Amar well-wisher ra-i shudhu diben... apni ki shei lucky list-e? 👀</p>
 
   <div class="btn-row">
-    <button class="btn yes" id="yesBtn" onclick="onYes()">✓&nbsp;Dibo, inshallah</button>
-    <button class="btn" id="noBtn" ontouchstart="flee(event)" onmouseover="flee(event)" onclick="flee(event)">✕&nbsp;Na, dibo na</button>
+    <button class="btn yes" id="yesBtn" onclick="onYes()">✓&nbsp;দিব, in sha Allah</button>
+    <button class="btn" id="noBtn" ontouchstart="flee(event)" onmouseover="flee(event)" onclick="flee(event)">✕&nbsp;না, দিব না</button>
   </div>
   <p class="nudge" id="nudge">Na korben na... pore somossa hobe 😬</p>
 
@@ -72,7 +72,7 @@
     <p class="info-tag" id="infoTag">bKash</p>
     <p class="bkash-no">01790-467463</p>
     <button class="copy-btn" id="cpBtn" onclick="doCopy()">Copy Number</button>
-    <p class="dua-text" id="duaTxt">JazakAllahu Khairan 🤲 — may this Eid bring you immeasurable joy. Ameen.</p>
+    <p class="dua-text" id="duaTxt">JazakAllahu Khairan 🤲 — may this Eid bring you joy. Ameen.</p>
   </div>
 
   <div class="sep" id="sep2"><span class="sep-icon">◆</span></div>
