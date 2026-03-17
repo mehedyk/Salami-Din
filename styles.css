@@ -42,9 +42,6 @@ canvas#bg {
 }
 .pill:hover { opacity: 0.7; }
 .pill.lit { font-weight: 700; }
-.pill .arr { font-size: 8px; transition: transform 0.25s; margin-top: 1px; }
-.pill.open .arr { transform: rotate(180deg); }
-
 .dpicker { position: relative; }
 .ddrop {
   display: none; position: absolute; top: calc(100% + 8px); left: 0;
