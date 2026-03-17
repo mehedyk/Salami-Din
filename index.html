@@ -15,18 +15,9 @@
 
 <!-- TOPBAR -->
 <nav class="bar">
-  <div class="dpicker">
-    <button class="pill" id="tpBtn" onclick="toggleDD()">
-      <span id="tpLbl">🌙 Midnight</span>
-      <span class="arr">▾</span>
-    </button>
-    <div class="ddrop" id="dd">
-      <div class="dopt on" onclick="setTheme('midnight','🌙 মাঝ-রাত',this)">মাঝ-রাত</div>
-      <div class="dopt"    onclick="setTheme('ivory','🌿 সকাল',this)">সকাল</div>
-      <div class="dopt"    onclick="setTheme('dusk','🏜️ সন্ধ্যা',this)">সন্ধ্যা</div>
-      <div class="dopt"    onclick="setTheme('village','🦟 Grame Mosha Kom',this)">🦟 Grame Mosha Kom</div>
-    </div>
-  </div>
+  <button class="pill" id="tpBtn" onclick="cycleTheme()">
+    <span id="tpLbl">🌙 Midnight</span>
+  </button>
   <div class="bar-right">
     <button class="pill" id="nsBtn" onclick="toggleN()">🔇 Nasheed</button>
     <button class="pill" id="lgBtn" onclick="toggleL()">🌐 EN</button>
