@@ -29,7 +29,7 @@ const TX = {
   },
   en: {
     lbl:'Eid ul Fitr', ttl:'Eid Mubarak', dua:'Taqabbalallahu Minna Wa Minkum',
-    ask:'Dear well-wisher — would you send a little salami to <em>Mehedi (Aunik)</em>? 🥺',
+    ask:'Dear well-wisher — would you send a little salami to <em>Mehedy (Aunik)</em>? 🥺',
     asub:'Only the truly generous ones do this... are you one of them? 👀',
     nudge:"Please don't say no... consequences await 😬",
     yes:"✓&nbsp;Yes, inshallah", no:"✕&nbsp;No, I won't",
@@ -282,7 +282,7 @@ function drawCard() {
   x.fillStyle=p.sub; x.font='300 14px "Cormorant Garamond",serif';
   x.fillText("With warmest wishes and du'a,",W/2,165);
   x.fillStyle=p.txt; x.font='600 21px "Cormorant Garamond",serif';
-  x.fillText('Mehedi (Aunik)',W/2,193);
+  x.fillText('Mehedy (Aunik)',W/2,193);
   x.fillStyle=p.muted; x.font='300 12px "DM Sans",sans-serif';
   x.fillText('EID UL FITR  '+new Date().getFullYear(),W/2,217);
   x.fillStyle=p.acc+'15'; x.fillRect(0,H-32,W,32);
