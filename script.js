@@ -76,29 +76,35 @@ function toggleL() { lang = lang==='bn'?'en':'bn'; applyLang(); }
 
 /* ── THEME ── */
 let theme = 'midnight';
-function toggleDD() {
-  document.getElementById('tpBtn').classList.toggle('open');
-  document.getElementById('dd').classList.toggle('open');
-}
-document.addEventListener('click', e => {
-  const dp = document.querySelector('.dpicker');
-  if (!dp.contains(e.target)) {
-    document.getElementById('tpBtn').classList.remove('open');
-    document.getElementById('dd').classList.remove('open');
-  }
-});
-function setTheme(t, label, el) {
-  theme = t;
-  document.body.className = t;
+const THEMES = [
+  { key: 'midnight', label: '🌙 Midnight' },
+  { key: 'ivory',   label: '🌿 সকাল'    },
+  { key: 'dusk',    label: '🏜️ সন্ধ্যা' },
+  { key: 'village', label: '🦟 Grame Mosha Kom' }
+];
+let themeIdx = 0;
+function cycleTheme() {
+  themeIdx = (themeIdx + 1) % THEMES.length;
+  const { key, label } = THEMES[themeIdx];
+  theme = key;
+  document.body.className = key;
   document.getElementById('tpLbl').textContent = label;
-  document.getElementById('tpBtn').classList.remove('open');
-  document.getElementById('dd').classList.remove('open');
-  document.querySelectorAll('.dopt').forEach(o => o.classList.remove('on'));
-  el.classList.add('on');
   initPts(); drawBg();
-  if (nOn) switchN(t);
+  if (nOn) switchN(key);
   if (cardMade) makeCard();
 }
+
+/* ── AUTOPLAY: play nasheed on first user interaction ── */
+let autoplayDone = false;
+function tryAutoplay() {
+  if (autoplayDone) return;
+  autoplayDone = true;
+  nOn = true;
+  updateNBtn();
+  switchN(theme);
+}
+document.addEventListener('click',      tryAutoplay, { once: true });
+document.addEventListener('touchstart', tryAutoplay, { once: true });
 
 /* ── BACKGROUND CANVAS ── */
 const cv = document.getElementById('bg');
